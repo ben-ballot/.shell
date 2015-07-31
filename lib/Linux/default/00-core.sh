@@ -1,4 +1,4 @@
-_pwait () { 
+my_pwait () { 
         # We wait for all processes to finish until $_timeout expires 
         local _pids=$@ _timeout=10 _pid _cmdpid 
  
@@ -15,4 +15,21 @@ _pwait () {
         #  the existence of PIDs, avoiding being stuck checking 
         ( sleep ${_timeout} ; kill -- -${_cmdpid} 2>/dev/null ) & 
         wait ${_cmdpid} 
+}
+
+my_dry_run () {
+	if [ "$MY_DRY_RUN" = "1" ];then
+		echo $@
+	else
+		if [ "$MY_VERBOSE" = "1" ];then
+			echo $@
+		fi
+		$@
+	fi
+}
+
+my_verbose () {
+	if [ "$MY_VERBOSE" = "1" ];then
+		echo $@
+	fi
 }
