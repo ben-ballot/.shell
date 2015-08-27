@@ -6,7 +6,7 @@ function start_agent {
      echo succeeded
      chmod 600 "${SSH_ENV}"
      . "${SSH_ENV}" > /dev/null
-     for ssh_key in "${HOME}.ssh/*dsa*" "${HOME}.ssh/*rsa*"
+     for ssh_key in "${HOME}/.ssh/*dsa*" "${HOME}/.ssh/*rsa*"
      do
          /usr/bin/ssh-add ${ssh_key%*.pub}
      done
