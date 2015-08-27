@@ -6,7 +6,10 @@ function start_agent {
      echo succeeded
      chmod 600 "${SSH_ENV}"
      . "${SSH_ENV}" > /dev/null
-     /usr/bin/ssh-add
+     for ssh_key in "${HOME}.ssh/*dsa*" "${HOME}.ssh/*rsa*"
+     do
+         /usr/bin/ssh-add ${ssh_key%*.pub}
+     done
 }
 
 # Source SSH settings, if applicable
@@ -18,7 +21,7 @@ if [ -f "${SSH_ENV}" ]; then
          start_agent
      }
 else
-     if ! pgrep gnome-keyring-daemon >/dev/null 2>&1; then
+     if ! pgrep gnome-keyring >/dev/null 2>&1; then
          start_agent
      fi
 fi
