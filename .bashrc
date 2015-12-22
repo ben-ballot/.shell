@@ -3,6 +3,7 @@ SCRIPT_PATH=$(dirname ${BASH_SOURCE[0]})
 
 # Common stuff whatever the bash version / OS
 export EDITOR=vim
+export HISTTIMEFORMAT="%d/%m/%y %T "
 
 
 # Load aliases
