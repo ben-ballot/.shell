@@ -1,2 +1,8 @@
+# Docker
 alias clean_docker="docker ps  -f=status=exited -q | xargs docker rm -v"
 alias clean_docker_images="docker images -a -q -f dangling=true | xargs docker rmi"
+
+# Vim
+alias vl="vim --serverlist"
+
+# vim: ft=sh
