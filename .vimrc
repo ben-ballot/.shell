@@ -49,9 +49,16 @@ Plugin 'tpope/vim-fugitive' " Show git branch in status bar
 Plugin 'xolox/vim-misc' " Needed by vim-session
 Plugin 'xolox/vim-session' " Make use of mksession easier
 
+Plugin 'saltstack/salt-vim' " For saltstack files
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Set filetype based on name
+autocmd BufRead,BufNewFile *Dockerfile* setlocal filetype=dockerfile
+autocmd BufRead,BufNewFile *dockerfile* setlocal filetype=dockerfile
+autocmd BufRead,BufNewFile *.spec.in setlocal filetype=spec
 
 "" General section
 set nowrap        " don't wrap lines
