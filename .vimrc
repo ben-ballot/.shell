@@ -51,6 +51,10 @@ Plugin 'xolox/vim-session' " Make use of mksession easier
 
 Plugin 'saltstack/salt-vim' " For saltstack files
 
+Plugin 'fatih/vim-go' " Go Plugin
+
+Plugin 'pearofducks/ansible-vim' " Ansible plugin
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

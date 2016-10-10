@@ -1,4 +1,6 @@
 export GOROOT="$HOME/go"
-export GOPATH="$GOROOT/bin"
 [ -d "$GOROOT" ] || mkdir -p "$GOROOT"
+[ -d "$GOROOT"/bin ] &&  export PATH="$GOROOT"/bin:"$PATH"
+export GOPATH="$GOROOT/work"
 [ -d "$GOPATH" ] || mkdir -p "$GOPATH"
+export PATH="$GOPATH"/bin:"$PATH"
