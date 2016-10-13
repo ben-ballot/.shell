@@ -88,7 +88,11 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 
+" FX button mapping
 set pastetoggle=<F2> " Toggle PASTE mode
+
+" Remove trailing whitespaces
+:nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 set hidden " Allow leaving a buffer with unsaved changes
 
