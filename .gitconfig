@@ -1,6 +1,6 @@
 [user]
 	name = Benjamin Allot
-	email = benjamin.allot@scality.com
+	email = @@MAIL@@
 [diff]
 	tool = meld
 [alias]
