@@ -58,6 +58,7 @@ Plugin 'pearofducks/ansible-vim' " Ansible plugin
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+set encoding=utf-8
 
 " Set filetype based on name
 autocmd BufRead,BufNewFile *Dockerfile* setlocal filetype=dockerfile
