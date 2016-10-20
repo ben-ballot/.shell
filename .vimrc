@@ -64,6 +64,9 @@ set encoding=utf-8
 autocmd BufRead,BufNewFile *Dockerfile* setlocal filetype=dockerfile
 autocmd BufRead,BufNewFile *dockerfile* setlocal filetype=dockerfile
 autocmd BufRead,BufNewFile *.spec.in setlocal filetype=spec
+autocmd BufRead,BufNewFile *.functions setlocal filetype=sh
+autocmd BufRead,BufNewFile *.sls setlocal filetype=sls
+autocmd BufRead,BufNewFile *.jinja setlocal filetype=jinja
 
 "" General section
 set nowrap        " don't wrap lines
