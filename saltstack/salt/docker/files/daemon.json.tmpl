@@ -1,0 +1,8 @@
+{%- if grains['kernelrelease'].startswith('4') %}
+  {%- set driver = "overlay2" %}
+{%- else %}
+  {%- set driver = "devicemapper" %}
+{%- endif %}
+{
+    "storage-driver": "{{ driver }}"
+}
