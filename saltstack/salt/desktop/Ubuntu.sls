@@ -2,10 +2,18 @@
 
 
 
-setup mutiverse:
+setup multiverse:
   pkg.installed:
     - name: software-properties-common
   cmd.run:
     - name: add-apt-repository multiverse
     - require:
       - pkg: setup multiverse
+
+
+desktop packages:
+  pkg.installed:
+    - pkgs:
+      - chromium-browser
+      - terminator
+      - vim-gui-common
