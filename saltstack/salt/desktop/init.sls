@@ -6,6 +6,6 @@ include:
   - dev.git
   - dev.shell
   - dev.python
-  - dev.go
+  - dev.golang
   - docker
   - desktop.{{ grains['os'] }}
