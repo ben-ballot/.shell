@@ -20,7 +20,7 @@ run plugin install:
   cmd.run:
     - name: vim -E +"PluginInstall" +':let g:session_autosave="no"' +qall
     - runas: {{ user_info('name') }}
-    - timeout: 120
+    - timeout: 600
     - output_loglevel: quiet
     - onchanges:
       - git: clone vundle
