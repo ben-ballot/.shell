@@ -6,6 +6,7 @@
 include:
   - editors.vim.dotfiles
   - dev.git
+  - dev.git.github_com
 
 clone vundle:
   git.latest:

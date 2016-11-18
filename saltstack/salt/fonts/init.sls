@@ -4,6 +4,7 @@
 
 include:
   - dev.git
+  - dev.git.github_com
 
 install fontconfig:
   pkg.installed:

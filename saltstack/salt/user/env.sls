@@ -5,6 +5,7 @@
 
 include:
   - dev.git
+  - dev.git.github_com
 
 clone .shell:
   git.latest:
