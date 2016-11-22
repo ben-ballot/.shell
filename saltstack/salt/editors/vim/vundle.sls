@@ -16,6 +16,15 @@ clone vundle:
     - require:
       - sls: editors.vim.dotfiles
 
+owner of vundle:
+  file.recurse:
+    - name: {{ user_info('home') }}/.vim/bundle/Vundle.vim
+    - user: {{ user_info('uid') }}
+    - group: {{ user_info('gid') }}
+    - onchanges:
+      - git: clone vundle
+
+
 run plugin install:
   cmd.run:
     - name: vim -E +"PluginInstall" +':let g:session_autosave="no"' +qall
