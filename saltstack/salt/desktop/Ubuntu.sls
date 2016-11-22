@@ -1,7 +1,5 @@
 # Include all Ubuntu related stuff for a desktop
 
-
-
 setup multiverse:
   pkg.installed:
     - name: software-properties-common
@@ -16,4 +14,5 @@ desktop packages:
     - pkgs:
       - chromium-browser
       - terminator
-      - vim-gui-common
+      - vim-gtk
+      - network-manager-openvpn
