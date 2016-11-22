@@ -69,6 +69,9 @@ autocmd BufRead,BufNewFile *.spec.in setlocal filetype=spec
 autocmd BufRead,BufNewFile *.functions setlocal filetype=sh
 autocmd BufRead,BufNewFile *.sls setlocal filetype=sls
 autocmd BufRead,BufNewFile *.jinja setlocal filetype=jinja
+" Prevent modelines to be run on commit message
+" formatted like this "xxxx:"
+autocmd FileType gitrebase setlocal nomodeline
 
 "" General section
 set nowrap        " don't wrap lines
