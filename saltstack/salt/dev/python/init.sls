@@ -6,6 +6,8 @@ install python packages:
     - pkgs:
       - flake8
       - ipython
+      - pyflakes
+      - pyflakes3
       - python-dev
       - python-flake8
       - python-jedi
