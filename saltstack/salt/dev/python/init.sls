@@ -1,6 +1,11 @@
 # Manage python development environment
 #
 
-install virtualenvwrapper:
+install python packages:
   pkg.installed:
-    - name: virtualenvwrapper
+    - pkgs:
+      - ipython
+      - python-dev
+      - python-flake8
+      - python-jedi
+      - virtualenvwrapper
