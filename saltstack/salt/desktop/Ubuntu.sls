@@ -8,6 +8,9 @@ setup multiverse:
     - require:
       - pkg: setup multiverse
 
+setup kernel ppa:
+  pkgrepo.managed:
+    - ppa: kernel-ppa/ppa
 
 desktop packages:
   pkg.installed:
