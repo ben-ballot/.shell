@@ -8,10 +8,10 @@ vs() {
     else
         editor=vim
     fi
-    if [ -z "$VIM_SERVER" ]; then
+    if [ -z "$VS" ]; then
         servername="vimserver"
     else
-        servername="$VIM_SERVER"
+        servername="$VS"
     fi
     if [ $# -eq 0 ]; then
         "$editor" --servername "$servername"
