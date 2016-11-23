@@ -19,3 +19,4 @@ desktop packages:
       - terminator
       - vim-gtk
       - network-manager-openvpn
+      - dconf-editor
