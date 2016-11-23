@@ -11,8 +11,9 @@ setup multiverse:
 desktop packages:
   pkg.installed:
     - pkgs:
+      - acpi
       - chromium-browser
+      - dconf-editor
+      - network-manager-openvpn
       - terminator
       - vim-gtk
-      - network-manager-openvpn
-      - dconf-editor
