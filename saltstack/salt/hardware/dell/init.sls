@@ -1,2 +1,2 @@
 include:
-  - {{ grains['productname'] }}
+  - hardware.dell.{{ grains['productname']|replace(" ", "_") }}
