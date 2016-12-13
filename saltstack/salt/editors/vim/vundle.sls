@@ -10,9 +10,10 @@ include:
 
 clone vundle:
   git.latest:
-    - name: https://github.com/VundleVim/Vundle.vim.git
+    - name: https://github.com/gmarik/Vundle.vim.git
     - target: {{ user_info('home') }}/.vim/bundle/Vundle.vim
     - user: {{ user_info('name') }}
+    - rev: master
     - require:
       - sls: editors.vim.dotfiles
 
