@@ -24,7 +24,6 @@ owner of vundle:
     - onchanges:
       - git: clone vundle
 
-
 run plugin install:
   cmd.run:
     - name: vim -E +"PluginInstall" +':let g:session_autosave="no"' +qall
