@@ -17,5 +17,6 @@
 	ft = fetch --all --tags --prune
 	fp = format-patch -M -C --find-copies-harder --stdout
 	wt = worktree
+	ria = rebase -i --autosquash
 [core]
 	excludesfile = ~/.shell/.gitignore_global
