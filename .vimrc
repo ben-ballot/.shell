@@ -39,7 +39,7 @@ Plugin 'altercation/vim-colors-solarized' "Solarized theme (GUI)
 
 Plugin 'scrooloose/nerdtree' "Hierarchy tree
 
-Plugin 'kien/ctrlp.vim' " Search files
+Plugin 'ctrlpvim/ctrlp.vim' " Search files
 
 Plugin 'vim-airline/vim-airline' "Status bar
 Plugin 'vim-airline/vim-airline-themes'
@@ -178,7 +178,7 @@ let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#tabline#enabled = 1
 
 " Session
-let g:session_autosave = "prompt"
+let g:session_autosave = "no"
 let g:session_autosaveperiodic = 60
 let g:session_persist_colors = 0
 let g:session_persist_font = 0
