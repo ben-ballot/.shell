@@ -19,7 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 " of Plugin)*
 
 " Auto-Complete
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " Folding
 Plugin 'tmhedberg/SimpylFold' "Folding
@@ -37,14 +37,14 @@ Plugin 'nvie/vim-flake8' " PEP8
 Plugin 'jnurmine/Zenburn' " Zenburn theme (console)
 Plugin 'altercation/vim-colors-solarized' "Solarized theme (GUI)
 
-Plugin 'scrooloose/nerdtree' "Hierarchy tree
+" Plugin 'scrooloose/nerdtree' " Hierarchy tree
 
 Plugin 'ctrlpvim/ctrlp.vim' " Search files
 
 Plugin 'vim-airline/vim-airline' "Status bar
 Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'tpope/vim-fugitive' " Show git branch in status bar
+Plugin 'tpope/vim-fugitive' " Give Git command inside vim
 
 Plugin 'xolox/vim-misc' " Needed by vim-session
 Plugin 'xolox/vim-session' " Make use of mksession easier
@@ -55,7 +55,7 @@ Plugin 'fatih/vim-go' " Go Plugin
 
 Plugin 'pearofducks/ansible-vim' " Ansible plugin
 
-Bundle 'Rykka/riv.vim'
+Plugin 'Rykka/riv.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -178,7 +178,7 @@ let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#tabline#enabled = 1
 
 " Session
-let g:session_autosave = "no"
+let g:session_autosave = "yes"
 let g:session_autosaveperiodic = 60
 let g:session_persist_colors = 0
 let g:session_persist_font = 0
