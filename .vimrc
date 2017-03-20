@@ -37,7 +37,7 @@ Plugin 'nvie/vim-flake8' " PEP8
 Plugin 'jnurmine/Zenburn' " Zenburn theme (console)
 Plugin 'altercation/vim-colors-solarized' "Solarized theme (GUI)
 
-" Plugin 'scrooloose/nerdtree' " Hierarchy tree
+Plugin 'scrooloose/nerdtree' " Hierarchy tree
 
 Plugin 'ctrlpvim/ctrlp.vim' " Search files
 
@@ -56,6 +56,7 @@ Plugin 'fatih/vim-go' " Go Plugin
 Plugin 'pearofducks/ansible-vim' " Ansible plugin
 
 Plugin 'Rykka/riv.vim'
+Plugin 'Rykka/InstantRst'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

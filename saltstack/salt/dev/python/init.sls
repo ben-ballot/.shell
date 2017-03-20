@@ -11,4 +11,5 @@ install python packages:
       - python-dev
       - python-flake8
       - python-jedi
+      - python-pip
       - virtualenvwrapper

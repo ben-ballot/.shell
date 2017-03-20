@@ -7,6 +7,7 @@ include:
   - editors.vim.dotfiles
   - dev.git
   - dev.git.github_com
+  - dev.python
 
 clone vundle:
   git.latest:
@@ -18,10 +19,13 @@ clone vundle:
       - sls: editors.vim.dotfiles
 
 owner of vundle:
-  file.recurse:
+  file.directory:
     - name: {{ user_info('home') }}/.vim/bundle/Vundle.vim
     - user: {{ user_info('uid') }}
     - group: {{ user_info('gid') }}
+    - recurse:
+      - user
+      - group
     - onchanges:
       - git: clone vundle
 
@@ -33,3 +37,11 @@ run plugin install:
     - output_loglevel: quiet
     - onchanges:
       - git: clone vundle
+
+install instant-rst:
+  cmd.run:
+    - name: pip install https://github.com/Rykka/instant-rst.py/archive/master.zip
+    - runas: {{ user_info('name') }}
+    - unless: python -c "import instant_rst"
+    - require:
+      - sls: dev.python
