@@ -45,6 +45,7 @@ Plugin 'vim-airline/vim-airline' "Status bar
 Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'tpope/vim-fugitive' " Give Git command inside vim
+Plugin 'junegunn/gv.vim' " Give a git browser
 
 Plugin 'xolox/vim-misc' " Needed by vim-session
 Plugin 'xolox/vim-session' " Make use of mksession easier
@@ -127,6 +128,13 @@ nnoremap <silent> <C-Right> <c-w>l
 nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
+
+" cnext/cprev navigation
+nnoremap <silent> <leader><PageUp> <esc>:cnext<CR>
+nnoremap <silent> <leader><PageDown> <esc>:cprev<CR>
+
+" Grep under the cursor
+nnoremap <silent> <leader>g <esc>:Ggrep <C-R><C-W><CR>
 
 " Copy to system clipboard Visual selection
 " vnoremap <silent> <C-c> y/<C-R>"*<CR><esc>

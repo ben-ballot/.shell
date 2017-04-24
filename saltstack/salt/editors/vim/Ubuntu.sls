@@ -14,3 +14,6 @@ configure ppa for vim 8.0:
     - require_in:
       - pkg: install vim
 
+add ctags package:
+  pkg.installed:
+    - name: exuberant-ctags
