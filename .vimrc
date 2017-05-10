@@ -59,6 +59,8 @@ Plugin 'pearofducks/ansible-vim' " Ansible plugin
 Plugin 'Rykka/riv.vim'
 Plugin 'Rykka/InstantRst'
 
+Plugin 'mhinz/vim-grepper'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -185,6 +187,11 @@ let g:airline_symbols.space = "\ua0"
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
+
+" spaces are allowed after tabs, but not in between
+" this algorithm works well with programming styles that use tabs for
+" indentation and spaces for alignment
+let g:airline#extensions#whitespace#mixed_indent_algo = 2
 
 " Session
 let g:session_autosave = "yes"
