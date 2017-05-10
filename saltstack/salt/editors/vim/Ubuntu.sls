@@ -16,4 +16,6 @@ configure ppa for vim 8.0:
 
 add ctags package:
   pkg.installed:
-    - name: exuberant-ctags
+    - names:
+      - exuberant-ctags
+      - pandoc

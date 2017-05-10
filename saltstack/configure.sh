@@ -11,6 +11,5 @@ sudo salt-call --local \
     --file-root="$SCRIPT_DIR"/salt \
     --pillar-root="$SCRIPT_DIR"/pillar \
     --retcode-passthrough \
-    -l quiet \
     state.apply \
     "$@"

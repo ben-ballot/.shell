@@ -22,5 +22,5 @@ compile YCM:
     - cwd: {{ user_info('home') }}/.vim/bundle/YouCompleteMe
     - require:
       - cmd: run plugin install
-  #- onchanges:
-    #    - git: clone vundle
+    - onchanges:
+      - git: clone vundle
