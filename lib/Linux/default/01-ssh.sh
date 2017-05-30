@@ -21,3 +21,9 @@ if [ -f "${SSH_ENV}" -a ! pgrep gnom-keyring >/dev/null 2>&1 ]; then
     start_agent
     }
 fi
+
+# Reattach agent when connecting to tmux
+if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
+    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock;
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock;
