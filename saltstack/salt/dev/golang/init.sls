@@ -14,5 +14,5 @@ install golang {{ golang.version }} for {{ user_info("name") }}:
     - source_hash: sha256={{ golang.sha256 }}
     - archive_format: tar
     - archive_user: {{ user_info("name") }}
-    - tar_options: v
+    - options: v
     - if_missing: {{ goroot }}
