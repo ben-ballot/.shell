@@ -8,4 +8,4 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWUPSTREAM="auto"
-export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\n\$ '
