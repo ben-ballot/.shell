@@ -21,9 +21,6 @@ Plugin 'gmarik/Vundle.vim'
 " Auto-Complete
 Plugin 'Valloric/YouCompleteMe'
 
-" Folding
-Plugin 'tmhedberg/SimpylFold' "Folding
-
 " Python autodindent
 Plugin 'vim-scripts/indentpython.vim' " Indent python
 
@@ -49,6 +46,7 @@ Plugin 'junegunn/gv.vim' " Give a git browser
 
 Plugin 'xolox/vim-misc' " Needed by vim-session
 Plugin 'xolox/vim-session' " Make use of mksession easier
+Plugin 'xolox/vim-easytags' " Support tags
 
 Plugin 'saltstack/salt-vim' " For saltstack files
 
@@ -59,7 +57,9 @@ Plugin 'pearofducks/ansible-vim' " Ansible plugin
 Plugin 'Rykka/riv.vim'
 Plugin 'Rykka/InstantRst'
 
-Plugin 'mhinz/vim-grepper'
+"Plugin 'mhinz/vim-grepper'
+
+Plugin 'vim-scripts/csv.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -110,6 +110,7 @@ set pastetoggle=<F2> " Toggle PASTE mode
 set hidden " Allow leaving a buffer with unsaved changes
 
 set mouse=a " Use mouse in all mode
+set mousefocus
 
 set guioptions-=T  "remove toolbar
 
@@ -141,16 +142,12 @@ nnoremap <silent> <leader>g <esc>:Ggrep <C-R><C-W><CR>
 " Copy to system clipboard Visual selection
 " vnoremap <silent> <C-c> y/<C-R>"*<CR><esc>
 
-"" Folding
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-
-" See the docstring when folding
-let g:SimpylFold_docstring_preview=1
+" Set a border at 80 column
+set colorcolumn=80
 
 " Autocompletion stuff
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_collect_identifiers_from_tags_files = 1 " Use ctags
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Colors set
@@ -198,3 +195,11 @@ let g:session_autosave = "yes"
 let g:session_autosaveperiodic = 60
 let g:session_persist_colors = 0
 let g:session_persist_font = 0
+
+" Refresh correctly background color upon vim console exit
+":set t_te=[H2J
+"
+" Easytags settings
+:set tags=./\.tags;
+:let g:easytags_dynamic_files = 2
+:set cpoptions+=d
