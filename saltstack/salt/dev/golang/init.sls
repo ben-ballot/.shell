@@ -15,4 +15,3 @@ install golang {{ golang.version }} for {{ user_info("name") }}:
     - archive_format: tar
     - archive_user: {{ user_info("name") }}
     - options: v
-    - if_missing: {{ goroot }}
