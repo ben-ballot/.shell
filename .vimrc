@@ -200,6 +200,7 @@ let g:session_persist_font = 0
 ":set t_te=[H2J
 "
 " Easytags settings
-:set tags=./\.tags;
+:set tags=./.tags;
 :let g:easytags_dynamic_files = 2
 :set cpoptions+=d
+:let g:easytags_async = 1
