@@ -25,7 +25,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/indentpython.vim' " Indent python
 
 " Syntax
-Plugin 'scrooloose/syntastic' "Syntax checker
+" Plugin 'scrooloose/syntastic' "Syntax checker
+Plugin 'w0rp/ale' "Replace syntastic
 
 "
 Plugin 'nvie/vim-flake8' " PEP8
@@ -135,9 +136,6 @@ nnoremap <silent> <C-Down> <c-w>j
 " cnext/cprev navigation
 nnoremap <silent> <leader><PageUp> <esc>:cnext<CR>
 nnoremap <silent> <leader><PageDown> <esc>:cprev<CR>
-
-" Grep under the cursor
-nnoremap <silent> <leader>g <esc>:Ggrep <C-R><C-W><CR>
 
 " Copy to system clipboard Visual selection
 " vnoremap <silent> <C-c> y/<C-R>"*<CR><esc>
