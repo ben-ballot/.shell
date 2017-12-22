@@ -34,6 +34,7 @@ Plugin 'nvie/vim-flake8' " PEP8
 " Colors
 Plugin 'jnurmine/Zenburn' " Zenburn theme (console)
 Plugin 'altercation/vim-colors-solarized' "Solarized theme (GUI)
+Plugin 'lifepillar/vim-solarized8' "More recent Solarized theme
 
 Plugin 'scrooloose/nerdtree' " Hierarchy tree
 
@@ -47,7 +48,8 @@ Plugin 'junegunn/gv.vim' " Give a git browser
 
 Plugin 'xolox/vim-misc' " Needed by vim-session
 Plugin 'xolox/vim-session' " Make use of mksession easier
-Plugin 'xolox/vim-easytags' " Support tags
+"Plugin 'xolox/vim-easytags' " Support tags
+Plugin 'ludovicchabant/vim-gutentags' " Support tagv
 
 Plugin 'saltstack/salt-vim' " For saltstack files
 
@@ -148,19 +150,20 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_collect_identifiers_from_tags_files = 1 " Use ctags
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+set background=dark
+
 " Colors set
 if has('gui_running')
-  set background=dark
-  colorscheme solarized
+  colorscheme solarized8
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 else
   "colors theme configuration (console)
   if &term == "linux" || &term == "screen.linux"
     set t_Co=8
-    colorscheme zenburn
+    colorscheme solarized8
   else
     set t_Co=256
-    colorscheme zenburn
+    colorscheme solarized8
   endif
 endif
 
@@ -196,9 +199,20 @@ let g:session_persist_font = 0
 
 " Refresh correctly background color upon vim console exit
 ":set t_te=[H2J
-"
+
+"""""""""""""""""""""
+" ctags related stuff
+"""""""""""""""""""""
+" Search for ".tags" in current directory and go up inside the hierarchy
+" if not found
+set tags=./.tags;
+
 " Easytags settings
-:set tags=./.tags;
-:let g:easytags_dynamic_files = 2
-:set cpoptions+=d
-:let g:easytags_async = 1
+" let g:easytags_dynamic_files = 2
+" set cpoptions+=d
+" let g:easytags_async = 1
+
+" Gutentags settings
+let g:gutentags_ctags_tagfile = ".tags"
+set statusline+=%{gutentags#statusline()} "Display something while generating
+
