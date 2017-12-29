@@ -4,6 +4,7 @@
 include:
   - user.env
   - editors.vim.vundle
+  - dev.golang
 
 {%- if grains['os_family'] == 'Debian' %}
 YouCompleteMe packages:
@@ -17,7 +18,7 @@ YouCompleteMe packages:
 
 compile YCM:
   cmd.run:
-    - name: ./install.py
+    - name: ./install.py --clang-completer --go-completer
     - runas: {{ user_info('name') }}
     - cwd: {{ user_info('home') }}/.vim/bundle/YouCompleteMe
     - require:
