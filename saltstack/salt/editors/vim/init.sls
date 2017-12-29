@@ -12,4 +12,3 @@ include:
 install vim:
   pkg.latest:
     - name : vim
-    - skip_verify: True

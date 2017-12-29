@@ -5,12 +5,18 @@
 include:
   - user.env
 
-link to .vim directory:
-  file.symlink:
+create {{ user_info('home') }}.vim directory:
+  file.recurse:
     - name: {{ user_info('home') }}/.vim
-    - target: {{ user_info('home') }}/.shell/.vim
+    - source: salt://editors/vim/files/vim
+    - user: {{ user_info('uid') }}
+    - group: {{ user_info('gid') }}
 
-link to .vimrc:
-  file.symlink:
+    #    - target: {{ user_info('home') }}/.shell/.vim
+
+create {{ user_info('home') }}.vimrc:
+  file.managed:
     - name: {{ user_info('home') }}/.vimrc
-    - target: {{ user_info('home') }}/.shell/.vimrc
+    - source: salt://editors/vim/files/vimrc
+    - user: {{ user_info('uid') }}
+    - group: {{ user_info('gid') }}

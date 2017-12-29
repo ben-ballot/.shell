@@ -3,7 +3,7 @@ base:
     - common
 
   'roles:desktop':
-    - match: grains
+    - match: grain
     - desktop
 
   'roles:server':

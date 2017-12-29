@@ -2,10 +2,13 @@
 
 include:
   - common
-  - editors
-  - dev.git
-  - dev.shell
-  - dev.python
-  - dev.golang
-  - docker
   - desktop.{{ grains['os'] }}
+  - dev.git
+  - dev.golang
+  - dev.python
+  - dev.shell
+  - docker
+  - editors
+  - hipchat
+  - terminal
+  - tmux

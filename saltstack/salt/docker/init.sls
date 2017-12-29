@@ -4,7 +4,7 @@ include:
   - docker.{{ grains['os'] }}
 
 install docker engine:
-  pkg.installed:
+  pkg.latest:
     - name: docker-engine
     - require:
       - pkgrepo: configure docker repository

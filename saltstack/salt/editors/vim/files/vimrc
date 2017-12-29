@@ -161,7 +161,11 @@ else
   if &term == "linux" || &term == "screen.linux"
     set t_Co=8
     colorscheme solarized8
-  else
+elseif &term == "screen-256color"
+	set term=xterm-256color
+    set t_Co=256
+    colorscheme solarized8
+else
     set t_Co=256
     colorscheme solarized8
   endif
