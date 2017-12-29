@@ -16,6 +16,7 @@ desktop packages:
     - pkgs:
       - network-manager-openvpn
       - vim-gui-common
+      - gconf2
 
 install zim:
   pkg.installed:
