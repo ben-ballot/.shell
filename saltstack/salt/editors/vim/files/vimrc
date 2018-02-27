@@ -48,7 +48,7 @@ Plugin 'junegunn/gv.vim' " Give a git browser
 
 Plugin 'xolox/vim-misc' " Needed by vim-session
 Plugin 'xolox/vim-session' " Make use of mksession easier
-"Plugin 'xolox/vim-easytags' " Support tags
+
 Plugin 'ludovicchabant/vim-gutentags' " Support tagv
 
 Plugin 'saltstack/salt-vim' " For saltstack files
@@ -57,12 +57,15 @@ Plugin 'fatih/vim-go' " Go Plugin
 
 Plugin 'pearofducks/ansible-vim' " Ansible plugin
 
+" Rst related plugins
 Plugin 'Rykka/riv.vim'
 Plugin 'Rykka/InstantRst'
 
-"Plugin 'mhinz/vim-grepper'
+Plugin 'vim-scripts/csv.vim' " CSV column inside vim
 
-Plugin 'vim-scripts/csv.vim'
+Plugin 'vim-scripts/wmgraphviz' " graphviz plugin
+
+Plugin 'plytophogy/vim-virtualenv' " Use virtualenv modules for all python
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -161,11 +164,11 @@ else
   if &term == "linux" || &term == "screen.linux"
     set t_Co=8
     colorscheme solarized8
-elseif &term == "screen-256color"
-	set term=xterm-256color
+  elseif &term == "screen-256color"
+    set term=xterm-256color
     set t_Co=256
     colorscheme solarized8
-else
+  else
     set t_Co=256
     colorscheme solarized8
   endif

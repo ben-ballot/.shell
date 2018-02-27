@@ -12,8 +12,6 @@ create {{ user_info('home') }}.vim directory:
     - user: {{ user_info('uid') }}
     - group: {{ user_info('gid') }}
 
-    #    - target: {{ user_info('home') }}/.shell/.vim
-
 create {{ user_info('home') }}.vimrc:
   file.managed:
     - name: {{ user_info('home') }}/.vimrc

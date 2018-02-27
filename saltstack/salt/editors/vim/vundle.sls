@@ -37,6 +37,7 @@ run plugin install:
     - output_loglevel: quiet
     - onchanges:
       - git: clone vundle
+      - sls: editors.vim.dotfiles
 
 install instant-rst:
   cmd.run:
