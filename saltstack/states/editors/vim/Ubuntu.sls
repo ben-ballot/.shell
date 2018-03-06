@@ -8,6 +8,8 @@ include:
 configure ppa for vim 8.0:
   pkgrepo.managed:
     - ppa: jonathonf/vim
+    - keyserver: keyserver.ubuntu.com
+    - keyid: F06FC659
     - require_in:
       - pkg: install vim
 
