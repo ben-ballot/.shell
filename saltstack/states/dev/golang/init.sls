@@ -7,6 +7,7 @@
 {%- set goroot = user_info("home") ~ golang.user_goroot %}
 {%- set gopath = user_info("home") ~ golang.user_gopath %}
 {%- set golang_archive = "go" ~ golang.version ~ "." ~ grains['kernel']|lower ~ "-" ~ grains['osarch'] ~ ".tar.gz" %}
+{%- set golang_archive_path = "/var/tmp/" ~ golang_archive %}
 
 
 remove old golang version:
@@ -17,7 +18,7 @@ remove old golang version:
 
 download golang {{ golang.version }} for {{ user_info("name") }}:
   file.managed:
-    - name: {{ user_info("home") }}/Downloads/{{ golang_archive }}
+    - name: {{ golang_archive_path }}
     - source: https://storage.googleapis.com/golang/{{ golang_archive }}
     - source_hash: sha256={{ golang.sha256 }}
     - user: {{ user_info("uid") }}
@@ -26,7 +27,7 @@ download golang {{ golang.version }} for {{ user_info("name") }}:
 install golang {{ golang.version }} for {{ user_info("name") }}:
   archive.extracted:
     - name: {{  user_info("home") }}
-    - source: {{ user_info("home") }}/Downloads/{{ golang_archive }}
+    - source: {{ golang_archive_path }}
     - archive_format: tar
     - user: {{ user_info("name") }}
     - group: {{ user_info("gid") }}
