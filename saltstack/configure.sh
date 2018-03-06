@@ -7,7 +7,7 @@ SCRIPT_DIR="$(dirname "$SCRIPT")"
 declare -a salt_opts
 
 salt_opts+=(--local)
-salt_opts+=("--file-root=$SCRIPT_DIR/salt")
+salt_opts+=("--file-root=$SCRIPT_DIR/states")
 salt_opts+=("--pillar-root=$SCRIPT_DIR/pillar")
 salt_opts+=(--retcode-passthrough)
 
