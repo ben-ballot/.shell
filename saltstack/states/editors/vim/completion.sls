@@ -23,8 +23,8 @@ compile YCM:
     - runas: {{ user_info('name') }}
     - cwd: {{ user_info('home') }}/.vim/bundle/YouCompleteMe
     - env:
-      - GOROOT: {{ golang.goroot }}
-      - GOPATH: {{ golang.gopath }}
+      - GOROOT: {{ user_info('home') }}{{ golang.user_goroot }}
+      - GOPATH: {{ user_info('home') }}{{ golang.user_gopath }}
     - require:
       - cmd: run plugin install
     - onchanges:
