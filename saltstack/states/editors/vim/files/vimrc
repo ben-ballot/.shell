@@ -223,3 +223,8 @@ set tags=./.tags;
 let g:gutentags_ctags_tagfile = ".tags"
 set statusline+=%{gutentags#statusline()} "Display something while generating
 
+" Set python ALE linters
+let g:ale_linters = {'python': ['flake8']}
+
+" Disable Riv Folding
+g:riv_disable_folding = 1
