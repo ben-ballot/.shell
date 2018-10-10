@@ -116,7 +116,6 @@ set pastetoggle=<F2> " Toggle PASTE mode
 set hidden " Allow leaving a buffer with unsaved changes
 
 set mouse=a " Use mouse in all mode
-set mousefocus
 
 set guioptions-=T  "remove toolbar
 
