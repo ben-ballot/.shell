@@ -67,6 +67,8 @@ Plugin 'vim-scripts/wmgraphviz' " graphviz plugin
 
 Plugin 'plytophogy/vim-virtualenv' " Use virtualenv modules for all python
 
+Plugin 'vim-scripts/plantuml-syntax' " Plantuml syntax highlighting
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
