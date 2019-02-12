@@ -1,11 +1,11 @@
 base:
   '*':
-    - common
+    - ballot-formula.common
 
   'roles:desktop':
     - match: grain
-    - desktop
+    - ballot-formula.desktop
 
   'roles:server':
     - match: grain
-    - docker
+    - ballot-formula.docker

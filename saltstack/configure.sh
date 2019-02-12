@@ -7,7 +7,7 @@ SCRIPT_DIR="$(dirname "$SCRIPT")"
 declare -a salt_opts
 
 salt_opts+=(--local)
-salt_opts+=("--file-root=$SCRIPT_DIR/states")
+salt_opts+=("--file-root=$SCRIPT_DIR/salt")
 salt_opts+=("--pillar-root=$SCRIPT_DIR/pillar")
 salt_opts+=(--retcode-passthrough)
 
@@ -23,6 +23,9 @@ fi
 if [[ "$1" == "--cmd" ]]; then
     shift
     salt_cmd=("$@")
+fi
+if [[ "$1" == "--list" || -z "$1" ]]; then
+    salt_cmd=(state.show_sls '*')
 fi
 
 sudo salt-call "${salt_opts[@]}" \
