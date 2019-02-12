@@ -1,3 +1,5 @@
+#!/bin/bash
+
 openstack_push_image() {
     local -a args
     local name="$1"
