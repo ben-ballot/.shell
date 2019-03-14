@@ -26,3 +26,4 @@ command! -b Pandoc
 	\ | execute ':silent !pandoc -s -f rst % > /tmp/vim-rst.html && x-www-browser /tmp/vim-rst.html'
 	\ | execute ':redraw!'
 
+setlocal textwidth=80
