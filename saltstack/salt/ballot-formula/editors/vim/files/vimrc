@@ -230,3 +230,6 @@ let g:ale_linters = {'python': ['flake8']}
 
 " Disable Riv Folding
 let g:riv_disable_folding = 1
+
+" Load filetype plantuml
+autocmd BufNewFile,BufRead *.uml set syntax=plantuml
