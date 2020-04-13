@@ -1,6 +1,5 @@
 # Docker related functions
 if ! DOCKER=$(which docker) ;then
-	echo "Docker not installed"
 	return
 fi
 
