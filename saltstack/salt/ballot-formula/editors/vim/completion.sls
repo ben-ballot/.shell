@@ -1,13 +1,13 @@
 # Run /.vim/bundle/YouCompleteMe; ./install.py --clang-completer
-{%- from 'user/info.sls' import user_info with context %}
-{%- from "dev/map.jinja" import golang with context %}
+{%- from "ballot-formula/user/info.sls" import user_info with context %}
+{%- from "ballot-formula/dev/map.jinja" import golang with context %}
 
 include:
-  - user.env
-  - editors.vim.vundle
-  - dev.golang
+  - ballot-formula.user.env
+  - ballot-formula.dev.golang
+  - ballot-formula.editors.vim.{{ grains['os'] }}
 
-{%- if grains['os_family'] == 'Debian' %}
+{%- if grains['os_family'] == "Debian" %}
 YouCompleteMe packages:
   pkg.installed:
     - pkgs:

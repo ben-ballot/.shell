@@ -1,9 +1,9 @@
 # Manage vim dotfiles
 
-{%- from 'user/info.sls' import user_info with context %}
+{%- from 'ballot-formula/user/info.sls' import user_info with context %}
 
 include:
-  - user.env
+  - ballot-formula.user.env
 
 create {{ user_info('home') }}.vim directory:
   file.recurse:

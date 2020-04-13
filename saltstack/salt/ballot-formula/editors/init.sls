@@ -2,4 +2,4 @@
 #
 
 include:
-  - editors.vim
+  - .vim

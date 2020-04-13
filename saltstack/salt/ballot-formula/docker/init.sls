@@ -1,7 +1,7 @@
 # Configure docker based on the right OS
 
 include:
-  - docker.{{ grains['os'] }}
+  - ballot-formula.docker.{{ grains['os'] }}
 
 install docker engine:
   pkg.latest:

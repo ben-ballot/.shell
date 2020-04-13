@@ -1,8 +1,8 @@
 # Manage golang stuff
 #
 
-{%- from "user/info.sls" import user_info with context %}
-{%- from "dev/map.jinja" import golang with context %}
+{%- from "ballot-formula/user/info.sls" import user_info with context %}
+{%- from "ballot-formula/dev/map.jinja" import golang with context %}
 
 {%- set goroot = user_info("home") ~ golang.user_goroot %}
 {%- set gopath = user_info("home") ~ golang.user_gopath %}

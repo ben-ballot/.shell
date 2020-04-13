@@ -1,6 +1,6 @@
 # All specific github.com related stuff
 
-{%- from 'user/info.sls' import user_info with context %}
+{%- from 'ballot-formula/user/info.sls' import user_info with context %}
 
 ssh known_hosts for github.com:
   ssh_known_hosts.present:

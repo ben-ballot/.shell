@@ -1,13 +1,13 @@
 
 # Manage vim dotfiles
 
-{%- from 'user/info.sls' import user_info with context %}
+{%- from 'ballot-formula/user/info.sls' import user_info with context %}
 
 include:
-  - editors.vim.dotfiles
-  - dev.git
-  - dev.git.github_com
-  - dev.python
+  - ballot-formula.editors.vim.dotfiles
+  - ballot-formula.dev.git
+  - ballot-formula.dev.git.github_com
+  - ballot-formula.dev.python
 
 clone vundle:
   git.latest:

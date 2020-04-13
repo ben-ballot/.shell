@@ -2,7 +2,7 @@
 #
 
 include:
-  - common.{{ grains['os_family'] }}
+  - .{{ grains['os_family'] }}
 
 install common packages:
   pkg.installed:

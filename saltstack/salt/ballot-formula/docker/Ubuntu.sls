@@ -2,7 +2,7 @@
 #
 
 include:
-  - common
+  - ballot-formula.common
 
 configure docker repository:
   pkgrepo.managed:

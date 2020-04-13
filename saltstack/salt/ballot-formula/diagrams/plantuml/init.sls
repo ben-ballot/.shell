@@ -1,7 +1,7 @@
 # Manage PlantUML installation
 #
 
-{%- from "user/info.sls" import user_info with context %}
+{%- from "ballot-formula/user/info.sls" import user_info with context %}
 {%- set plantuml_jar = user_info("home") ~ "/.local/share/plantuml/plantuml.jar" %}
 
 downlaod PlantUML jar file:

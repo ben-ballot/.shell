@@ -1,6 +1,6 @@
 # Include all Ubuntu related stuff for a desktop
 
-{%- from 'user/info.sls' import user_info with context %}
+{%- from 'ballot-formula/user/info.sls' import user_info with context %}
 {%- set terminology_src = user_info('home') ~ "/git/github.com/terminology" %}
 
 setup multiverse:

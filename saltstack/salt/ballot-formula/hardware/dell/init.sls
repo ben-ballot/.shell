@@ -1,2 +1,2 @@
 include:
-  - hardware.dell.{{ grains['productname']|replace(" ", "_") }}
+  - ballot-formula.hardware.dell.{{ grains['productname']|replace(" ", "_") }}

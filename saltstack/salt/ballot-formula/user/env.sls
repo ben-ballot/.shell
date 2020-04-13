@@ -1,11 +1,11 @@
 # Update this git repository
 #
 
-{%- from 'user/info.sls' import user_info with context %}
+{%- from 'ballot-formula/user/info.sls' import user_info with context %}
 
 include:
-  - dev.git
-  - dev.git.github_com
+  - ballot-formula.dev.git
+  - ballot-formula.dev.git.github_com
 
 clone .shell:
   git.latest:

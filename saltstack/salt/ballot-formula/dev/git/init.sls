@@ -1,15 +1,15 @@
 # Git specific settings
 #
 #
-{%- from 'user/info.sls' import user_info with context %}
+{%- from 'ballot-formula/user/info.sls' import user_info with context %}
 
-{%- if grains['os'] == 'Ubuntu' %}
-set git ppa:
-  pkgrepo.managed:
-    - ppa: git-core/ppa
-    - require_in:
-      - pkg: install git
-{%- endif %}
+# {%- if grains['os'] == 'Ubuntu' %}
+# set git ppa:
+#   pkgrepo.managed:
+#     - ppa: git-core/ppa
+#     - require_in:
+#       - pkg: install git
+# {%- endif %}
 
 install git:
   pkg.installed:

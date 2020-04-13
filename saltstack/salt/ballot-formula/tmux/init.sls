@@ -1,10 +1,10 @@
 # tmux specific settings
 #
 #
-{%- from 'user/info.sls' import user_info with context %}
+{%- from 'ballot-formula/user/info.sls' import user_info with context %}
 
 include:
-  - dev.git
+  - ballot-formula.dev.git
 
 clone tmux/tpm:
   git.latest:
