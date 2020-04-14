@@ -1,29 +1,33 @@
-SSH_ENV="$HOME/.ssh/environment"
+#!/bin/bash
+
+typeset SSH_ENV="$HOME/.ssh/environment"
 
 function start_agent {
      echo "Initialising new SSH agent..."
      /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
      echo succeeded
      chmod 600 "${SSH_ENV}"
-     . "${SSH_ENV}" > /dev/null
-     for ssh_key in "${HOME}/.ssh/*dsa*"
-     do
-         /usr/bin/ssh-add ${ssh_key%*.pub}
+     # shellcheck disable=SC1090
+     source "${SSH_ENV}" > /dev/null
+     for ssh_key in \
+        "${HOME?}"/.ssh/id_rsa.pub \
+        "${HOME?}"/.ssh/id_ecdsa.pub \
+        "${HOME?}"/.ssh/id_ed25519.pub; do
+        if [ -f "${ssh_key}" ]; then
+            echo "Adding ssh-key ${ssh_key}"
+            /usr/bin/ssh-add "${ssh_key%*.pub}"
+        fi
      done
 }
 
-# Source SSH settings, if applicable
-
-if [ -f "${SSH_ENV}" -a ! pgrep gnom-keyring >/dev/null 2>&1 ]; then
-    . "${SSH_ENV}" > /dev/null
-#ps ${SSH_AGENT_PID} doesn't work under cywgin
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent > /dev/null || {
+# Start agent if needed
+if [ "$(pgrep -u "${UID?}" ssh-agent \
+    || pgrep -u "${UID?}" gnome-keyring)" == "" ]; then
     start_agent
-    }
 fi
 
 # Reattach agent when connecting to tmux
-if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
-    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock;
+if [[ -S "${SSH_AUTH_SOCK?}" && ! -h "${SSH_AUTH_SOCK?}" ]]; then
+    ln -sf "${SSH_AUTH_SOCK?}" ~/.ssh/ssh_auth_sock;
 fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock;
+export SSH_AUTH_SOCK="$HOME"/.ssh/ssh_auth_sock;
