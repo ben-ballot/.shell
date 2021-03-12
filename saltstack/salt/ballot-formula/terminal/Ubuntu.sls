@@ -2,7 +2,6 @@
 # Ubuntu specific stuff
 #
 #
-
-configure terminology repository:
-  pkgrepo.managed:
-    - ppa: niko2040/e19
+Install terminator:
+  pkg.latest:
+    - name: terminator
