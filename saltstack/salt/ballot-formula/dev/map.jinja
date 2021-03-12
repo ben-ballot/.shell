@@ -1,7 +1,7 @@
-{% set golang = salt['grains.filter_by']({
+{%- set golang = salt['grains.filter_by']({
     'Linux': {
-        'version': '1.9.2',
-        'sha256': 'de874549d9a8d8d8062be05808509c09a88a248e77ec14eb77453530829ac02b',
+        'version': '1.16.2',
+        'sha256': '542e936b19542e62679766194364f45141fde55169db2d8d01046555ca9eb4b8',
         'user_goroot': '/go',
         'user_gopath': '/dev/go'
     }
