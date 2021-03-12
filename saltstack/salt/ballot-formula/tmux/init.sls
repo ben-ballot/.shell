@@ -18,11 +18,13 @@ clone tmux/tpm:
 install tmux:
   pkg.latest:
     - name: tmux
+    - require:
+      - pkg: install tmux plugins requirements
 
 install tmux plugins requirements:
   pkg.latest:
     - pkgs:
-      - xsel
+      - xclip
 
 create .tmux.conf in {{ user_info('name') }}:
   file.managed:
