@@ -1,3 +1,3 @@
 #!/bin/bash
 
-curl -L https://bootstrap.saltstack.com | sudo sh -s -- -X -x python3
+curl -L https://bootstrap.saltproject.io | sudo sh -s -- -X
