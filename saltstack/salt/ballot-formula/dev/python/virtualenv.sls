@@ -1,4 +1,4 @@
-{%- from 'user/info.sls' import user_info with context %}
+{%- from 'ballot-formula/user/info.sls' import user_info with context %}
 
 {%- if grains['os'] == 'Ubuntu' %}
 Create virtualenvwrapper directory:

@@ -3,9 +3,9 @@
 {%- from "ballot-formula/dev/map.jinja" import golang with context %}
 
 include:
-  - ballot-formula.user.env
-  - ballot-formula.dev.golang
-  - ballot-formula.editors.vim.{{ grains['os'] }}
+  - .user.env
+  - .dev.golang
+  - .editors.vim.{{ grains['os'] }}
 
 {%- if grains['os_family'] == "Debian" %}
 YouCompleteMe packages:

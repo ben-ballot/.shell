@@ -8,13 +8,13 @@ include:
 create {{ user_info('home') }}.vim directory:
   file.recurse:
     - name: {{ user_info('home') }}/.vim
-    - source: salt://editors/vim/files/vim
+    - source: salt://ballot-formula/editors/vim/files/vim
     - user: {{ user_info('uid') }}
     - group: {{ user_info('gid') }}
 
 create {{ user_info('home') }}.vimrc:
   file.managed:
     - name: {{ user_info('home') }}/.vimrc
-    - source: salt://editors/vim/files/vimrc
+    - source: salt://ballot-formula/editors/vim/files/vimrc
     - user: {{ user_info('uid') }}
     - group: {{ user_info('gid') }}

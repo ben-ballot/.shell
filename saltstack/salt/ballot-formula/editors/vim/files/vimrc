@@ -19,7 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 " of Plugin)*
 
 " Auto-Complete
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " Python autodindent
 Plugin 'vim-scripts/indentpython.vim' " Indent python
@@ -58,8 +58,8 @@ Plugin 'fatih/vim-go' " Go Plugin
 Plugin 'pearofducks/ansible-vim' " Ansible plugin
 
 " Rst related plugins
-Plugin 'Rykka/riv.vim'
-Plugin 'Rykka/InstantRst'
+" Plugin 'Rykka/riv.vim'
+" Plugin 'Rykka/InstantRst'
 
 Plugin 'vim-scripts/csv.vim' " CSV column inside vim
 
@@ -150,10 +150,10 @@ nnoremap <silent> <leader><PageDown> <esc>:cprev<CR>
 set colorcolumn=80
 
 " Autocompletion stuff
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_collect_identifiers_from_tags_files = 1 " Use ctags
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-map <leader>gd :YcmCompleter GetDoc<CR>
+" let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_collect_identifiers_from_tags_files = 1 " Use ctags
+" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" map <leader>gd :YcmCompleter GetDoc<CR>
 
 set background=dark
 
@@ -233,3 +233,10 @@ let g:riv_disable_folding = 1
 
 " Load filetype plantuml
 autocmd BufNewFile,BufRead *.uml set syntax=plantuml
+
+" Add unicode mapping
+map! <C-v>b [ ] 
+map! <C-v>w 🚧
+map! <C-v>c ✅
+map! <C-v>x ❌
+map! <C-v>t 🎟

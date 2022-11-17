@@ -3,16 +3,16 @@ Install common python packages:
     - pkgs:
       - virtualenvwrapper
 
-Install python2 packages:
-  pkg.latest:
-    - pkgs:
-      - flake8
-      - ipython
-      - pyflakes
-      - python-dev
-      - python-flake8
-      - python-jedi
-      - python-pip
+#Install python2 packages:
+#  pkg.latest:
+#    - pkgs:
+#      - flake8
+#      - ipython
+#      - pyflakes
+#      - python-dev
+#      - python-flake8
+#      - python-jedi
+#      - python-pip
 
 Install python3 packages:
   pkg.latest:

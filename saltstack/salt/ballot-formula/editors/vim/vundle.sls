@@ -4,7 +4,7 @@
 {%- from 'ballot-formula/user/info.sls' import user_info with context %}
 
 include:
-  - ballot-formula.editors.vim.dotfiles
+  - .dotfiles
   - ballot-formula.dev.git
   - ballot-formula.dev.git.github_com
   - ballot-formula.dev.python
@@ -16,7 +16,7 @@ clone vundle:
     - user: {{ user_info('name') }}
     - rev: master
     - require:
-      - sls: editors.vim.dotfiles
+      - sls: ballot-formula.editors.vim.dotfiles
 
 owner of vundle:
   file.directory:
@@ -37,12 +37,4 @@ run plugin install:
     - output_loglevel: quiet
     - onchanges:
       - git: clone vundle
-      - sls: editors.vim.dotfiles
-
-install instant-rst:
-  cmd.run:
-    - name: pip install https://github.com/Rykka/instant-rst.py/archive/master.zip
-    - runas: {{ user_info('name') }}
-    - unless: python -c "import instant_rst"
-    - require:
-      - sls: dev.python
+      - sls: ballot-formula.editors.vim.dotfiles
