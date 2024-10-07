@@ -5,7 +5,7 @@ GOPATH="$HOME"/dev/go
     export GOROOT="$GOROOT"
     export PATH="$GOROOT"/bin:"$PATH"
 }
-[ -d "$GOPATH" ] && {
+if [ -d "$GOPATH" ]; then
     export GOPATH="$GOPATH"
     export PATH="$GOPATH"/bin:"$PATH"
-}
+fi
