@@ -49,3 +49,14 @@ git-find-large-object() {
     
     echo -e "$output" | column -t -s ', '
 }
+
+cdgitroot() {
+    cd "$(git rev-parse --show-toplevel)" || return
+}
+
+update_gh_upstream() {
+    local repository
+    repository="$(git remote show upstream | awk '/Push/{print $NF}' | cut -f 2 -d '/' | cut -f 1 -d '.')"
+
+    gh repo sync "ben-ballot/${repository}"
+}
