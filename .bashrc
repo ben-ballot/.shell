@@ -7,14 +7,8 @@ export EDITOR=vim
 # History stuff
 export HISTTIMEFORMAT="%d/%m/%y %T "
 export HISTCONTROL=ignoredups:erasedups
+export HISTFILE="${HOME}/.bash_history"
 shopt -s histappend
-if [[ $TMUX_PANE ]]; then
-    typeset tmux_history="${HOME}/.bash_history.d"
-    if [ ! -d "${tmux_history}" ]; then
-        mkdir -p "${tmux_history}"
-    fi
-    export HISTFILE="${tmux_history}/tmux_${TMUX_PANE:1}"
-fi
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # Load aliases
