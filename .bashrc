@@ -4,12 +4,23 @@ SCRIPT_PATH="$(dirname "${BASH_SOURCE[0]}")"
 # Common stuff whatever the bash version / OS
 export EDITOR=vim
 
-# History stuff
-export HISTTIMEFORMAT="%d/%m/%y %T "
-export HISTCONTROL=ignoredups:erasedups
-export HISTFILE="${HOME}/.bash_history"
+# Don't put duplicate lines or lines starting with space in the history.
+HISTCONTROL=ignoreboth:erasedups
+
+# Huge history size (numbers are lines)
+HISTSIZE=100000
+HISTFILESIZE=200000
+
+# Append to the history file, don't overwrite it
 shopt -s histappend
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+# Save and reload the history after each command
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+# Only initialize Starship if the binary is found in the PATH
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init bash)"
+fi
 
 # Load aliases
 # shellcheck disable=SC1090
