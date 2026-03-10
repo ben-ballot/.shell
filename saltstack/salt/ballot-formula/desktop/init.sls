@@ -7,7 +7,6 @@ include:
   - ballot-formula.dev.golang
   - ballot-formula.dev.python
   - ballot-formula.dev.shell
-  - ballot-formula.docker
   - ballot-formula.editors
   - ballot-formula.terminal
   - ballot-formula.tmux

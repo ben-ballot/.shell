@@ -8,4 +8,4 @@ install common packages:
   pkg.installed:
     - pkgs:
       - curl
-      - python-pip
+      - python3-pip

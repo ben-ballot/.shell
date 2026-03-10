@@ -2,6 +2,6 @@
 # Ubuntu specific stuff
 #
 #
-Install terminator:
+Install starship:
   pkg.latest:
-    - name: terminator
+    - name: starship

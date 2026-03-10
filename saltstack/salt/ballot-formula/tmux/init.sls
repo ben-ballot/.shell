@@ -13,7 +13,7 @@ clone tmux/tpm:
     - user: {{ user_info('name') }}
     - rev: master
     - require:
-      - sls: dev.git
+      - sls: ballot-formula.dev.git
 
 install tmux:
   pkg.latest:
@@ -29,6 +29,6 @@ install tmux plugins requirements:
 create .tmux.conf in {{ user_info('name') }}:
   file.managed:
     - name: {{ user_info('home') }}/.tmux.conf
-    - source: salt://tmux/files/tmux.conf
+    - source: salt://ballot-formula/tmux/files/tmux.conf
     - user: {{ user_info('uid') }}
     - group: {{ user_info('gid') }}
