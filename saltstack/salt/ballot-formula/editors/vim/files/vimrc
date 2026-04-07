@@ -7,6 +7,8 @@ let mapleader="\<Space>"
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+" let vundle use git+ssh
+let g:vundle_default_git_proto='git'
 call vundle#begin()
 
 " alternatively, pass a path where Vundle should install plugins
@@ -14,12 +16,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
-" Add all your plugins here (note older versions of Vundle used Bundle instead
-" of Plugin)*
-
-" Auto-Complete
-" Plugin 'Valloric/YouCompleteMe'
 
 " Python autodindent
 Plugin 'vim-scripts/indentpython.vim' " Indent python
@@ -48,6 +44,7 @@ Plugin 'junegunn/gv.vim' " Give a git browser
 
 Plugin 'xolox/vim-misc' " Needed by vim-session
 Plugin 'xolox/vim-session' " Make use of mksession easier
+Plugin 'tpope/vim-obsession' " https://github.com/tpope/vim-obsession
 
 Plugin 'ludovicchabant/vim-gutentags' " Support tagv
 
@@ -56,10 +53,6 @@ Plugin 'saltstack/salt-vim' " For saltstack files
 Plugin 'fatih/vim-go' " Go Plugin
 
 Plugin 'pearofducks/ansible-vim' " Ansible plugin
-
-" Rst related plugins
-" Plugin 'Rykka/riv.vim'
-" Plugin 'Rykka/InstantRst'
 
 Plugin 'vim-scripts/csv.vim' " CSV column inside vim
 
